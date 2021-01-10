@@ -1,0 +1,10 @@
+xrdb ~∕.Xresources
+pkill -USR1 polybar
+killall dunst && dunst &
+# feh --bg-fill {wp}
+hsetroot -solid '{bg}'
+bspc wm -r
+sed -E 's/colorscheme [a-z]*-?_?[a-z]*/colorscheme {colorscheme}/' ~/.config/nvim/global.vim -i 
+sed -E "s/'colorscheme': '[a-z]*-?_?[a-z]*',$/'colorscheme': '{colorscheme}',/" ~/.config/nvim/plug-config/lightline.vim -i
+cat .cache/colorer/sequences | tee /dev/pts/[0-9]*
+betterlockscreen -u {wp}
