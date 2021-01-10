@@ -6,5 +6,5 @@ killall dunst && dunst &
 hsetroot -solid '{bg}'
 sed -E 's/colorscheme [a-z]*-?_?[a-z]*/colorscheme {colorscheme}/' ~/.config/nvim/global.vim -i 
 sed -E "s/'colorscheme': '[a-z]*-?_?[a-z]*',$/'colorscheme': '{colorscheme}',/" ~/.config/nvim/plug-config/lightline.vim -i
-cat ~/.cache/colorer/sequences | tee /dev/pts/[0-9]*
+echo -e $(cat ~/.cache/colorer/sequences) | tee /dev/pts/[0-9]*
 # betterlockscreen -u {wp}
