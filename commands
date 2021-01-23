@@ -1,10 +1,11 @@
 xrdb ~/.Xresources
 pkill -USR1 polybar
 killall dunst && dunst &
-# feh --bg-fill {wp}
-# bspc wm -r
-hsetroot -solid '{bg}'
-sed -E 's/colorscheme [a-z]*-?_?[a-z]*/colorscheme {colorscheme}/' ~/.config/nvim/global.vim -i 
-sed -E "s/'colorscheme': '[a-z]*-?_?[a-z]*',$/'colorscheme': '{colorscheme}',/" ~/.config/nvim/plug-config/lightline.vim -i
+feh --bg-fill {wp}
+bspc wm -r
+# hsetroot -solid '{bg}'
+sed -E 's/colorscheme [a-zA-Z]*-?_?[a-zA-Z]*/colorscheme {colorscheme}/' ~/.config/nvim/global.vim -i 
+sed -E "s/'colorscheme': '[a-zA-Z]*-?_?[a-zA-Z]*',$/'colorscheme': '{colorscheme}',/" ~/.config/nvim/plug-config/lightline.vim -i
 echo -e $(cat ~/.cache/colorer/sequences) | tee /dev/pts/[0-9]*
+cp {wp} /usr/share/sddm/themes/Sugar-Candy/Backgrounds/Wall.png
 # betterlockscreen -u {wp}
